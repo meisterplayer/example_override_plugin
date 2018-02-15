@@ -1,0 +1,39 @@
+{
+  "name": "override_plugin",
+  "version": "1.0.0",
+  "description": "Target for Meister website",
+  "main": "custom-hls.bundled",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate-docs": "meister-doc-builder",
+    "start": "gulp server",
+    "build": "gulp build",
+    "dist": "gulp build:dist",
+    "min": "gulp build:min",
+    "jsdocs": "gulp js-docs",
+    "bump": "gulp bump-version",
+    "changelog": "gulp changelog"
+  },
+  "keywords": [
+    "meister",
+    "video",
+    "plugin",
+    "development"
+  ],
+  "author": "Triple",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "meister-gulp-webpack-tasks": "^1.0.6",
+    "meister-gulp-browsersync-task": "^1.0.1",
+    "meister-js-dev": "^3.1.0",
+    "meister-doc-builder": "^5.0.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-es2017": "^6.22.0",
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "hls.js": "0.7.11",
+    "url-toolkit": "^2.0.1",
+    "webworkify": "^1.4.0"
+  }
+}

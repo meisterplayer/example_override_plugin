@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Development Target for Meister V5.0.3</title>
+        <!-- Peer5 library -->
+        <script src="//api.peer5.com/peer5.js?id=xxx"></script>
+        <script src="//api.peer5.com/peer5.hlsjs.loader.js"></script>
+
+
+        <script src="vendor/meister.bundled.min.js" charset="utf-8"></script>
+        <!-- <script src="build/custom-hls.bundled.js" charset="utf-8"></script>  --> <!-- Enable this to load your own HLS-plugin -->
+
+    </head>
+    <body>
+        <div id="meister" style="height:400px;"></div>
+        <script type="text/javascript">
+
+            var meister = new Meister('#meister', {
+                global: {
+                    autoplay: true,
+                },
+            });
+
+            meister.setPlaylist([
+                {
+                    src: 'https://wowza.peer5.com/live/smil:bbb_abr.smil/playlist.m3u8',
+                    type: 'm3u8',
+                    Hls:{
+                        fineTuning : {
+                            fLoader: window.peer5.HlsJsFragmentLoader,
+                            pLoader: window.peer5.HlsJsPlaylistLoader
+                        }
+                    }
+                }
+            ]);
+
+            meister.load();
+        </script>
+    </body>
+</html>
